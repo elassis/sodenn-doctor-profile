@@ -147,7 +147,7 @@ div.hover > a:hover{
     color: #961a32;
     transition: all 300ms ease;
    transform: scale(1.1);
-   font-weight: bold;
+   font-weight: normal;
 }
 div.correo{
     display: grid;
