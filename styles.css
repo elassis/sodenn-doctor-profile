@@ -14,11 +14,12 @@ body{
 
 }
 #op1{
-    content: "";    
+    content: ""; 
+    width:67px;   
     height:5px;
-    background-color: #961a32;
+    background-color: #fff;
     margin-top:45px;
-    left: 0;
+    left: 166px;
     position: absolute;
     transition: all ease 500ms;
     
@@ -43,19 +44,20 @@ body{
 .nav-bar > a:nth-child(1):hover ~ #op1{    
     background-color: #fff;
     width: 67px;
+    left:0px;
 }
 .nav-bar > a:nth-child(2):hover ~ #op1{  
     width: 100px;  
     left:66px;
     background-color: #fff;
 }
-.nav-bar > a:nth-child(3):hover ~ #op1{ 
+/*.nav-bar > a:nth-child(3):hover ~ #op1{ 
     width: 67px;   
     left:166px;
     background-color: #fff;
 }
 
-/*code for container*/
+code for container*/
 
 .container{
     width:50%;
@@ -119,16 +121,10 @@ box-shadow: 0px 0px 10px 0px rgba(156,151,156,1);
     align-items: center;
    
 }
-.nothing{
-    -webkit-box-shadow: 0px 9px 5px -6px rgba(134, 131, 131, 0.75);
--moz-box-shadow: 0px 9px 5px -6px rgba(122, 117, 117, 0.75);
-box-shadow: 0px 9px 5px -6px rgba(129, 123, 123, 0.75);
-border: 1px solid #e0e0e0;
-    cursor: pointer;
-}
+
 .p-data > div.hover{
 display: grid;
-grid-template-columns: 10% 35% 35%;
+grid-template-columns: 10% 40% 40%;
 grid-column-gap: 5px;
 
 
@@ -141,6 +137,7 @@ grid-column-gap: 5px;
     border-radius: 50px;
     font-size: 14px;
     text-align: center;
+    padding: 5px 0px;
     
 }
 div.hover > a:hover{
@@ -151,11 +148,10 @@ div.hover > a:hover{
 }
 div.correo{
     display: grid;
-grid-template-columns: 10% 45%;
+grid-template-columns: 10% 60%;
 grid-column-gap: 5px;
-
-
 }
+
 div.correo > a{
     text-decoration: none;
     color: #961a32;
@@ -164,6 +160,7 @@ div.correo > a{
     border-radius: 50px;
     font-size: 14px;
     text-align: center; 
+    padding:5px 0px;
 }
 div.correo > a:hover{
     color: #961a32;
@@ -186,6 +183,18 @@ div.correo > a:hover{
     color: #706769; 
     border-top: 1px solid #e0e0e0; 
     overflow: auto; 
+}
+::-webkit-scrollbar{
+    background:#e0e0e0;
+    width: 6px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: grey;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: #961a32;
+    border-radius: 5px;
 }
 .clinica{
     display: grid;    
@@ -231,7 +240,7 @@ div.correo > a:hover{
 
 @media(max-width:600px){
     .container{
-        width:60%;
+        width:80%;
         grid-template-rows: 35% 15% 25% 25%;
         grid-template-areas: "image image"
         "name name"
