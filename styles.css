@@ -55,8 +55,7 @@ box-shadow: 0px 0px 10px 0px rgba(156,151,156,1);
     grid-area: image;
     background-color: #961a32;
     padding-top: 50px;
-    box-sizing: border-box;
-       
+    box-sizing: border-box;       
 }
 
 .img > img{
@@ -71,7 +70,8 @@ box-shadow: 0px 0px 10px 0px rgba(156,151,156,1);
     grid-area: name;    
     display: flex;
     padding:0px 15px 0px 25px; 
-    background-color: #961a32;
+    background-color:#961a32;
+    border:none;
 }
 .name > p{
     font-size: 20px;
@@ -214,26 +214,29 @@ div.correo > a:hover{
 
 @media(max-width:600px){
     .container{
-        width:80%;
-        grid-template-rows: 35% 13% 30% 22%;
+        width:80%; 
+        height: 600px;
+        grid-template-rows: 30% 13% 30% 27%;
         grid-template-areas: "image image"
         "name name"
         "data data"
         "data-work data-work";
+       
     }
     .name > p {
+        align-self: center;
         margin-left:8%;
     }
-        .img{
-            padding-top: 25px;
-        }
+   .img{
+       padding-top :15px;
+    }
         .img > img{
             width: 150px;
             height: 150px;
+            
         }
         .p-data{
-            grid-template-rows: 33% 33% 33%;
-          
+            grid-template-rows: 33% 33% 33%;          
         }
         
         .data-work{
