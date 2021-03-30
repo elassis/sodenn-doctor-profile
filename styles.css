@@ -13,17 +13,7 @@ body{
     justify-content: flex-start;
 
 }
-#op1{
-    content: ""; 
-    width:67px;   
-    height:5px;
-    background-color: #fff;
-    margin-top:45px;
-    left: 166px;
-    position: absolute;
-    transition: all ease 500ms;
-    
-}
+
 .nav-bar > a{
     align-self: center;
     padding: 15px;   
@@ -40,24 +30,8 @@ body{
     background-color: #be5167;
 }
 
-/*effect hover*/
-.nav-bar > a:nth-child(1):hover ~ #op1{    
-    background-color: #fff;
-    width: 67px;
-    left:0px;
-}
-.nav-bar > a:nth-child(2):hover ~ #op1{  
-    width: 100px;  
-    left:66px;
-    background-color: #fff;
-}
-/*.nav-bar > a:nth-child(3):hover ~ #op1{ 
-    width: 67px;   
-    left:166px;
-    background-color: #fff;
-}
 
-code for container*/
+/*code for container*/
 
 .container{
     width:50%;
@@ -66,10 +40,10 @@ code for container*/
     margin-top:40px;    
     display:grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 15% 45% 40%;
-    grid-template-areas: "image name"
-    "image data"
-    "image data-work";
+    grid-template-rows: 50% 50%;
+    grid-template-areas: "image data"
+    "name data-work"
+    "name data-work";
     overflow: auto;      
     box-sizing: border-box;
     -webkit-box-shadow: 0px 0px 10px 0px rgba(156,151,156,1);
@@ -80,7 +54,7 @@ box-shadow: 0px 0px 10px 0px rgba(156,151,156,1);
 .img{
     grid-area: image;
     background-color: #961a32;
-    padding-top: 120px;
+    padding-top: 50px;
     box-sizing: border-box;
        
 }
@@ -88,21 +62,21 @@ box-shadow: 0px 0px 10px 0px rgba(156,151,156,1);
 .img > img{
     width:200px;
     height:200px;
-    border-radius: 100px;
+    border-radius: 200px;
     display: block;
     margin: auto;
     
 }
 .name{
-    grid-area: name;
-    border-radius: 0px 10px 0px 0px;
+    grid-area: name;    
     display: flex;
     padding:0px 15px 0px 25px; 
+    background-color: #961a32;
 }
 .name > p{
     font-size: 20px;
-    align-self: center;
-    color: #706769;   
+    align-self:flex-start;
+    color:#fff;   
 }
 .p-data{
     font-size: 16px;
@@ -241,14 +215,17 @@ div.correo > a:hover{
 @media(max-width:600px){
     .container{
         width:80%;
-        grid-template-rows: 35% 15% 25% 25%;
+        grid-template-rows: 35% 13% 30% 22%;
         grid-template-areas: "image image"
         "name name"
         "data data"
         "data-work data-work";
     }
+    .name > p {
+        margin-left:8%;
+    }
         .img{
-            padding-top: 10px;
+            padding-top: 25px;
         }
         .img > img{
             width: 150px;
