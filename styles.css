@@ -216,7 +216,7 @@ div.correo > a:hover{
     .container{
         width:80%; 
         height: 600px;
-        grid-template-rows: 30% 13% 30% 27%;
+        grid-template-rows: 30% 13% 33% 24%;
         grid-template-areas: "image image"
         "name name"
         "data data"
@@ -236,7 +236,7 @@ div.correo > a:hover{
             
         }
         .p-data{
-            grid-template-rows: 33% 33% 33%;          
+            grid-template-rows: 25% 25% 25% 25%;          
         }
         
         .data-work{
