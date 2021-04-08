@@ -42,8 +42,7 @@ body{
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
     grid-template-areas: "image data"
-    "name data-work"
-    "name data-work";
+    "name data-work";    
     overflow: auto;      
     box-sizing: border-box;
     -webkit-box-shadow: 0px 0px 10px 0px rgba(156,151,156,1);
@@ -52,23 +51,21 @@ box-shadow: 0px 0px 10px 0px rgba(156,151,156,1);
 }
 
 .img{
-    grid-area: image;
-    background-color: #961a32;
-    padding-top: 50px;
-    box-sizing: border-box;       
+    grid-area: image;     
+    background-color: #961a32;    
+    box-sizing: border-box; 
+   padding-top: 50px;      
 }
-
-.img > img{
-    width:200px;
-    height:200px;
-    border-radius: 200px;
+img{ 
+   width:50%;
     display: block;
     margin: auto;
-    
 }
+
+
 .name{
     grid-area: name;    
-    display: flex;
+    display: grid;
     padding:0px 15px 0px 25px; 
     background-color:#961a32;
     border:none;
@@ -76,7 +73,9 @@ box-shadow: 0px 0px 10px 0px rgba(156,151,156,1);
 .name > p{
     font-size: 20px;
     align-self:flex-start;
-    color:#fff;   
+    text-align: center;
+    color:#fff;
+    text-transform: capitalize;   
 }
 .p-data{
     font-size: 16px;
@@ -94,6 +93,9 @@ box-shadow: 0px 0px 10px 0px rgba(156,151,156,1);
     padding-left: 25px;
     align-items: center;
    
+}
+.p-data > div > .esp{
+    text-transform: capitalize;
 }
 
 .p-data > div.hover{
@@ -174,6 +176,7 @@ div.correo > a:hover{
     display: grid;    
     padding:0px 0px 0px 25px;
     
+    
 }
 .data-work > .clinica > span.title{
     color:#961a32;
@@ -183,29 +186,30 @@ div.correo > a:hover{
     font-weight: bold;
 }
 .data-work > .clinica > span.address{
-    width:100%;
+    width:90%;
     display:block;
     font-weight: normal;
 }
-.data-work > .clinica > span.tel{
-    width:105px;
+.telfs{
+    display: grid;
+    grid-template-columns: 100%;
+}
+.data-work > .clinica > .telfs{
+    width:fit-content;
     height: 17px;
+    padding:5px 10px;
     font-size: 14px;
     text-align: center;
-    display:block;
     font-weight: normal;
     color:#961a32;
     background-color:#e0e0e0;
     border-radius: 50px;
     transition:all 100ms ease;
+    text-decoration: none;
 
 
 }
-.data-work > .clinica > span.tel:hover{
-    transform:scale(1.1);
-    cursor: pointer;
-    font-weight: bold;
-}
+
 @media(max-width:800px){
     .container{
         width:80%;
@@ -225,18 +229,15 @@ div.correo > a:hover{
     }
     .name > p {
         align-self: center;
-        margin-left:8%;
+        
     }
    .img{
        padding-top :15px;
     }
-        .img > img{
-            width: 150px;
-            height: 150px;
-            
-        }
+        
         .p-data{
-            grid-template-rows: 25% 25% 25% 25%;          
+            grid-template-rows: 25% 25% 25% 25%;  
+            background-color: #fff;        
         }
         
         .data-work{
