@@ -27,6 +27,8 @@
 		.cont2{
 			width:30%;
 			height: 150px;
+			display: grid;
+			align-items: center;
 			margin: auto;
 			padding-top: 10%;
            
@@ -37,7 +39,7 @@
 			width: 83%;
 			font-family: Roboto;
 			font-size: 16px;
-		    margin-left:3%;
+		    
 			margin-top:2%;
 			padding: 8px;
 			border:none;
@@ -52,7 +54,7 @@
 			font-weight: bold;
 			color: #fff;
             margin-top: 0%;
-			margin-left: 3%;
+			
 			margin-bottom:-2%;
 		}
 
@@ -110,9 +112,12 @@
 
 			@media (max-width: 600px){
 		    .cont2{
-		        width:100%;
-		        margin-left:10%;
-		    }
+				display:grid;
+				justify-content:  center;		    
+		        width:100%;		        
+				padding-top:150px;
+				
+			}
 
            div.navbar{
                grid-template-columns: 40% 30% 30%;
@@ -124,12 +129,14 @@
 		    }
 		    
 		    p.titulo{
-		        margin-left:0%;
+		        display: grid;
+				
+				
 		    }
 		    
 		    input.entrada{
-		        width:80%;
-		        margin:auto;
+		        width:95%;
+		        
 		        margin-top:2%;
 		    }
 		   
@@ -148,15 +155,10 @@
 			<input class="entrada" type="text" id="term" required="required" name="term" placeholder="Nombre, Cl&#237nica o Regi&#243n...">
 	       <div id="termList" class="cont-consult"></div>
 	   </div>
-
-
-
-
-
-
 </div>
+
 <script>
-/*$(document).ready(function(){
+$(document).ready(function(){
     $('#term').keyup(function(){
        var query = $(this).val();
        if(query != '')
@@ -172,7 +174,7 @@
                });
            }
         });
-    });*/
+    })
     
 </script>
 
